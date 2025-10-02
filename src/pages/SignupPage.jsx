@@ -90,7 +90,7 @@ const SignupPage = () => {
     });
     
     if (result.success) {
-      navigate('/', { replace: true });
+      navigate('/login', { replace: true });
     }
   };
 
