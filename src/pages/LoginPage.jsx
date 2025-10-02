@@ -86,17 +86,17 @@ const LoginPage = () => {
 
         {/* Header */}
         <div className="text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-2">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
             Welcome Back
           </h2>
-          <p className="text-gray-600">
+          <p className="text-sm sm:text-base text-gray-600">
             Sign in to your account to continue shopping
           </p>
         </div>
 
         {/* Login Form */}
         <div className="card">
-          <div className="p-8">
+          <div className="p-6 sm:p-8">
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Email Field */}
               <div>

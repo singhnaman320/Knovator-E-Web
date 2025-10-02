@@ -76,18 +76,18 @@ const ProductCard = ({ product }) => {
       </div>
 
       {/* Product Info */}
-      <div className="p-4">
-        <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-primary-600 transition-colors">
+      <div className="p-3 sm:p-4">
+        <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-primary-600 transition-colors text-sm sm:text-base">
           {product.name}
         </h3>
         
-        <p className="text-sm text-gray-600 mb-3 line-clamp-2">
+        <p className="text-xs sm:text-sm text-gray-600 mb-3 line-clamp-2">
           {product.description}
         </p>
 
         <div className="flex items-center justify-between">
           <div className="flex flex-col">
-            <span className="text-2xl font-bold text-gray-900">
+            <span className="text-lg sm:text-2xl font-bold text-gray-900">
               ₹{product.price.toLocaleString('en-IN')}
             </span>
             {inCart && (
@@ -99,7 +99,7 @@ const ProductCard = ({ product }) => {
 
           <button
             onClick={handleAddToCart}
-            className={`flex items-center justify-center w-10 h-10 rounded-full transition-all duration-200 ${
+            className={`flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-full transition-all duration-200 ${
               !isAuthenticated
                 ? 'bg-gray-100 text-gray-400 hover:bg-gray-200'
                 : inCart
@@ -115,11 +115,11 @@ const ProductCard = ({ product }) => {
             }
           >
             {!isAuthenticated ? (
-              <Lock className="h-5 w-5" />
+              <Lock className="h-4 w-4 sm:h-5 sm:w-5" />
             ) : inCart ? (
-              <Check className="h-5 w-5" />
+              <Check className="h-4 w-4 sm:h-5 sm:w-5" />
             ) : (
-              <Plus className="h-5 w-5" />
+              <Plus className="h-4 w-4 sm:h-5 sm:w-5" />
             )}
           </button>
         </div>
