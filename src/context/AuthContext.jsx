@@ -45,9 +45,9 @@ const authReducer = (state, action) => {
       return {
         ...state,
         loading: false,
-        isAuthenticated: true,
-        user: action.payload.user,
-        token: action.payload.token,
+        isAuthenticated: false,
+        user: null,
+        token: null,
         error: null
       };
     
@@ -181,19 +181,11 @@ export const AuthProvider = ({ children }) => {
       const response = await authAPI.signup(userData);
       
       if (response.success) {
-        const { user, token } = response.data;
-        
-        saveAuthData(user, token);
-        
         dispatch({
-          type: 'SIGNUP_SUCCESS',
-          payload: {
-            user,
-            token
-          }
+          type: 'SIGNUP_SUCCESS'
         });
         
-        toast.success('Account created successfully!');
+        toast.success('Account created successfully! Please sign in to continue.');
         return { success: true };
       } else {
         throw new Error(response.message || 'Signup failed');
